@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Movie{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h1 class="heading">Select Movie</h1>
+    {% for x in rt: %}
+    <p>
+        {% if x["original_language"]== "en": %}
+        <a href="{{url_for('srch',id=x['id'])}}"> {{x["original_title"]}} - {{x["release_date"]}}</a>
+        {% endif %}
+    </p>
+    {% endfor %}
+
+</div>
+{% endblock %}
